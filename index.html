@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tabacco</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal({
+        title: "Для доступа на сайт необходимо подтвердить возраст",
+        icon: "warning",
+        button: "Да, мне есть 18!",
+        closeOnClickOutside: false
+            
+        });
+     </script>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>Табакерка</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">О нас</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+            
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Лучшие табачные лавки</h1>
+    <h3>в Новокузнецке!</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Розничная сеть табачных магазинов</h2>
+      <span>Ассортимент наших магазинов удовлетворит даже самых требовательных покупателей!</span>
+    </div>
+    <div class="text">
+      <span>Зайдя в наш магазин, вы найдёте для себя богатейший выбор разнообразной продукции. Сможете купить стики для IQOS. Сигареты, табак, курительные трубки, зажигалки, электронные сигареты. Наши продавцы помогут подобрать сувениры, проконсультируют о прочих аксессуарах для курения!</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Преимущества</h2>
+    <h4>с нами все выгоднее!</h4>
+
+    <div class="img">
+      <img src="https://atlantic-watches.ru/image/catalog/images/Bestprice.jpg" alt="">
+      <span>СУПЕР НИЗКИЕ ЦЕНЫ!</span>
+    </div>
+    <div class="img">
+            <img src="https://sigareta.guru/wp-content/auploads/405986/fullsize.jpg" alt="">
+            <span>Широкий ассортимент табачных изделий</span>
+          </div>
+  </div>
+
+  <div id="contacts">
+    <div>
+      <span class="title">Варианты оплаты</span><br>
+      <p></p>
+      <span class="heading">Наличный расчет</span>
+      <p></p>
+      <span class="heading">Безналичный расчет</span>
+      <p></p>
+    </div>
+    <div>
+      <span class="title">Адреса магазинов</span><br>
+      <span class="heading">Центральный район, остановка "Горбольница"</span>
+      <p>улица Дружбы, 3</p>
+      <span class="heading">Центральный район, остановка "Комсомольская площадка"</span>
+      <p>проспект Октябрьский, 47</p>
+      <span class="heading">Центральный район, остановка "Автолюбитель"</span>
+      <p>проспект Октябрьский, 58</p>
+    </div>
+ 
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
